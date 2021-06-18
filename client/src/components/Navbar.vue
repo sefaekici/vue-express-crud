@@ -3,8 +3,8 @@
         <h4>User App</h4>
 
         <ul>
-            <li><router-link to="/add-user">Add User</router-link></li>
-            <li><router-link to="/user-list">User List</router-link></li>
+            <li><router-link to="/adduser">Add User</router-link></li>
+            <li><router-link to="/">User List</router-link></li>
         </ul>
 
     </div>

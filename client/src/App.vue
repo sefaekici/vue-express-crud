@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <app-navbar></app-navbar>
-    <app-user-list></app-user-list>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -23,11 +23,10 @@
 
 <script>
 import Navbar from "./components/Navbar.vue"
-import UserList from "./components/UserList.vue";
+
 export default {
   components:{
     appNavbar:Navbar,
-    appUserList:UserList
   },
 }
 </script>
