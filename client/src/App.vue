@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <app-navbar></app-navbar>
-    <app-add-user></app-add-user>
+    <app-user-list></app-user-list>
   </div>
 </template>
 
@@ -23,11 +23,11 @@
 
 <script>
 import Navbar from "./components/Navbar.vue"
-import AddUser from "./components/AddUser.vue";
+import UserList from "./components/UserList.vue";
 export default {
   components:{
     appNavbar:Navbar,
-    appAddUser:AddUser,
+    appUserList:UserList
   },
 }
 </script>
