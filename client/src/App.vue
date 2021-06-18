@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <app-navbar></app-navbar>
+    <app-add-user></app-add-user>
   </div>
 </template>
 
@@ -22,9 +23,11 @@
 
 <script>
 import Navbar from "./components/Navbar.vue"
+import AddUser from "./components/AddUser.vue";
 export default {
   components:{
     appNavbar:Navbar,
+    appAddUser:AddUser,
   },
 }
 </script>
