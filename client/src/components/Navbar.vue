@@ -3,8 +3,8 @@
         <h4>User App</h4>
 
         <ul>
-            <li><router-link to="/adduser">Add User</router-link></li>
-            <li><router-link to="/">User List</router-link></li>
+            <li><router-link active-class="green" exact to="/adduser">Add User</router-link></li>
+            <li><router-link active-class="green" exact to="/">User List</router-link></li>
         </ul>
 
     </div>
@@ -48,9 +48,15 @@
                     color: black;
                     font-size: 20px;
                     color:#fff;
+                    transition: color .6s;
                     &:hover{
-                        opacity: 0.9;
+                       color:#28DF99;
+                       opacity: 0.6;
                     }
+                }
+
+                .green{
+                    color:#28DF99
                 }
             }
         }
