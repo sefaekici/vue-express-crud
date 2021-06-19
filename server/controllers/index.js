@@ -16,9 +16,13 @@ const getUserById = (req, res) => {
     .catch((err) => console.log(err));
 };
 const updateUserById = (req, res) => {
-  res.json({
-    success: true,
-  });
+  User.findByIdAndUpdate(req.params.id, {
+    name: req.body.name,
+    email: req.body.email,
+    job: req.body.job,
+  })
+    .then(() => console.log("User is updated..."))
+    .catch((err) => console.log(err));
 };
 const deleteUserById = (req, res) => {
   User.findById(req.params.id)
