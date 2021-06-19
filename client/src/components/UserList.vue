@@ -8,8 +8,8 @@
                     <span>{{user.name}}</span>
                </div>
                <div class="update-icons">
-                   <i class="fas fa-info"></i>
-                   <i class="fas fa-pencil-alt"></i>
+                   <i class="fas fa-info" @click="pushDetailPage(user._id)"></i>
+                   <i class="fas fa-pencil-alt" @click="pushEditPage(user._id)"></i>
                    <i class="fas fa-trash-alt" @click="deleteUserFromDatabase(user._id)"></i>
                </div>
             </li>
@@ -48,7 +48,13 @@ export default {
                    return user._id!=id
                 })
             this.users=newUsers;
-        }
+        },
+        pushDetailPage(id){
+            this.$router.push({path:"/"+id,params:{id}})
+        },
+        pushEditPage(id){
+            this.$router.push({path:"edit/"+id,params:{id}})
+        },
     }
 }
 </script>

@@ -23,9 +23,8 @@ const updateUserById = (req, res) => {
     email: req.body.email,
     job: req.body.job,
   })
-    .then(() => console.log("User is updated..."))
+    .then(() => res.send("Success"))
     .catch((err) => console.log(err));
-  s;
 };
 
 //Postman İle Test Edildi Başarılı
