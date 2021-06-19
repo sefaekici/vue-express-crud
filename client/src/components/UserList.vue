@@ -64,6 +64,9 @@ export default {
                 justify-content: space-between;
                 padding: 0 20px;
                 border-radius: 10px;
+                &:last-child{
+                    margin-bottom: 2rem;
+                }
                 .informations{
                     span{
                         border-radius: 5px;
