@@ -1,5 +1,5 @@
 const User = require("../models/User");
-
+//Postman İle Test Edildi Başarılı
 const getAllUsers = (req, res) => {
   User.find({})
     .then((data) => {
@@ -8,6 +8,7 @@ const getAllUsers = (req, res) => {
     .catch((err) => console.log(err));
 };
 
+//Postman İle Test Edildi Başarılı
 const getUserById = (req, res) => {
   User.findById(req.params.id)
     .then((data) => {
@@ -15,6 +16,7 @@ const getUserById = (req, res) => {
     })
     .catch((err) => console.log(err));
 };
+//Postman İle Test Edildi Başarılı
 const updateUserById = (req, res) => {
   User.findByIdAndUpdate(req.params.id, {
     name: req.body.name,
@@ -25,6 +27,8 @@ const updateUserById = (req, res) => {
     .catch((err) => console.log(err));
   s;
 };
+
+//Postman İle Test Edildi Başarılı
 const deleteUserById = (req, res) => {
   User.findById(req.params.id)
     .then((data) => {
@@ -38,6 +42,7 @@ const deleteUserById = (req, res) => {
     .catch((err) => console.log(err));
 };
 
+//Postman İle Test Edildi Başarılı
 const saveUser = (req, res) => {
   let User1 = new User({
     name: req.body.name,
