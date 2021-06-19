@@ -1,18 +1,46 @@
 <template>
     <div class="add-user">
-        <input type="text" placeholder="FirstName LastName">
-        <input type="email" placeholder="Email">
-        <input type="text" placeholder="Job">
-        <button>Save</button>
+        <input v-model="name" required type="text" placeholder="FirstName LastName">
+        <input v-model="email" required type="email" placeholder="Email">
+        <input v-model="job" required type="text" placeholder="Job">
+        <button @click="saveUserToDb()">Save</button>
     </div>
 </template>
 
 
 
 <script>
-
+import axios from "axios";
 export default {
-    
+    data(){
+        return{
+            name:"",
+            email:"",
+            job:""
+        }
+    },
+    methods:{
+        deleteAllVariables(){
+            this.name="";
+            this.email="";
+            this.job="";
+        },
+        saveUserToDb(){
+            let user={
+                name:this.name,
+                email:this.email,
+                job:this.job,
+            }
+            axios.post("http://localhost:5000/users",user)
+            .then(()=>
+                {
+                    //Alert Gelicek
+                    this.deleteAllVariables()
+                }
+            )
+            .catch(err=>console.log(err));
+        }
+    }
 }
 </script>
 

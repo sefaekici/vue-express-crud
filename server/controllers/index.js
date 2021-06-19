@@ -50,7 +50,10 @@ const saveUser = (req, res) => {
     job: req.body.job,
   });
   User1.save()
-    .then(() => console.log("User is saved..."))
+    .then(() => {
+      res.send("User is saved");
+      console.log("User is saved...");
+    })
     .catch((err) => console.log(err));
 };
 
