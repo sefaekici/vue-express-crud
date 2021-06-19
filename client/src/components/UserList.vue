@@ -8,6 +8,7 @@
                     <span>{{user.name}}</span>
                </div>
                <div class="update-icons">
+                   <i class="fas fa-info"></i>
                    <i class="fas fa-pencil-alt"></i>
                    <i class="fas fa-trash-alt" @click="deleteUserFromDatabase(user._id)"></i>
                </div>
@@ -102,16 +103,14 @@ export default {
                         cursor: pointer;
                         font-size: 20px;
                         color: #DBE6FD;
-                        &:first-child{
-                            margin-right: 2rem;
-                        }
-                        margin-right: 1rem;
+                        margin-right: 1.5rem;
                         transition: color .5s;
                         &:hover{
-                            &:first-child{
-                                color: #29C7AC;
+                            color:#28DF99;
+                            &:last-child{
+                                color: #FE346E;
                             }
-                            color: #FE346E;
+                            
                         }
                     }
                 }
