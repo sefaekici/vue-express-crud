@@ -23,6 +23,7 @@ const updateUserById = (req, res) => {
   })
     .then(() => console.log("User is updated..."))
     .catch((err) => console.log(err));
+  s;
 };
 const deleteUserById = (req, res) => {
   User.findById(req.params.id)
