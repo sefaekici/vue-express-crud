@@ -28,7 +28,7 @@ export default {
             axios.put("http://localhost:5000/users/"+this.$route.params.id,{
                 ...this.currentUser
             })
-            .then(()=>console.log("Başarılı"))
+            .then(()=>this.$router.push({path:"/"}))
             .catch(err=>console.log(err))
         }
     },
