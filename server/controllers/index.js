@@ -35,7 +35,10 @@ const deleteUserById = (req, res) => {
       if (data != null) {
         data
           .remove()
-          .then(() => console.log("User is deleted..."))
+          .then(() => {
+            res.send("User is deleted");
+            console.log("User is deleted...");
+          })
           .catch((err) => console.log(err));
       }
     })

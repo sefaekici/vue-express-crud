@@ -9,7 +9,7 @@
                </div>
                <div class="update-icons">
                    <i class="fas fa-pencil-alt"></i>
-                   <i class="fas fa-trash-alt"></i>
+                   <i class="fas fa-trash-alt" @click="deleteUserFromDatabase(user._id)"></i>
                </div>
             </li>
             
@@ -32,6 +32,22 @@ export default {
             this.users=data.data;
         })
         .catch(err=>console.log(err));
+    },
+    methods:{
+        deleteUserFromDatabase(id){
+           
+            axios.delete("http://localhost:5000/users/"+id)
+            .then(()=>{
+                this.deleteUserFromClient(id);
+            })
+            .catch(err=>console.log(err));
+        },
+        deleteUserFromClient(id){
+            const newUsers=this.users.filter((user)=>{
+                   return user._id!=id
+                })
+            this.users=newUsers;
+        }
     }
 }
 </script>
