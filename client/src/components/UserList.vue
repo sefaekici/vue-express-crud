@@ -2,10 +2,10 @@
     <div class="user-list">
         <h1>User List</h1>
         <ul>
-            <li>
+            <li v-for="user in users" :key="user._id">
                <div class="informations">
-                    <span>2167216271</span>
-                    <span>SEFA EKİCİ</span>
+                    <span>{{user._id}}</span>
+                    <span>{{user.name}}</span>
                </div>
                <div class="update-icons">
                    <i class="fas fa-pencil-alt"></i>
@@ -16,6 +16,25 @@
         </ul>
     </div>    
 </template>
+
+
+<script>
+import axios from "axios";
+export default {
+    data(){
+        return{
+            users:[],
+        }
+    },
+    created(){
+        axios.get("http://localhost:5000/users")
+        .then((data)=>{
+            this.users=data.data;
+        })
+        .catch(err=>console.log(err));
+    }
+}
+</script>
 
 
 
